@@ -1,0 +1,11 @@
+.table {
+  margin-top: 20px;
+  max-height: 400px;
+  overflow: scroll;
+  color: grey;
+  background-color: white;
+}
+
+.table__body .table__row:nth-of-type(odd) {
+  background-color: #f3f2f8;
+}
