@@ -1,3 +1,13 @@
 .infoBox {
   padding: 5px 20px;
 }
+
+.infoBox__cases {
+  color: #cc1034;
+  font-size: 30px;
+  margin-bottom: 5px;
+}
+
+.infoBox__cases.green {
+  color: rgb(79, 219, 79);
+}

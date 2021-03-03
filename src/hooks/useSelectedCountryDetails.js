@@ -11,7 +11,9 @@ const useSelectedCountryDetails = (selectedCountry) => {
 
     fetch(url)
       .then((res) => res.json())
-      .then((data) => setCountryData(data));
+      .then((data) => {
+        setCountryData(data);
+      });
   };
 
   useEffect(() => {

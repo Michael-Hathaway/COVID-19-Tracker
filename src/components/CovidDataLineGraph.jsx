@@ -21,7 +21,7 @@ const chartOptions = {
     intersect: false,
     callbacks: {
       label: (tooltipItem, data) => {
-        return numeral(tooltipItem.value).format('+0,0');
+        return numeral(tooltipItem.value).format('0,0');
       },
     },
   },

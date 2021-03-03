@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import useCountriesData from '../hooks/useCountriesData';
 import useSelectedCountryDetails from '../hooks/useSelectedCountryDetails';
 import useSelectedCountryTimeline from '../hooks/useSelectedCountryTimeline';
+import useMapDetails from '../hooks/useMapDetails';
 import Header from './Header';
 import Card from './Card';
 import CovidCasesInfoBox from './CovidCasesInfoBox';
 import Map from './Map';
 import Table from './Table';
 import CovidDataLineGraph from './CovidDataLineGraph';
+import 'leaflet/dist/leaflet.css';
 import '../style/app.css';
 
 const App = () => {
@@ -15,6 +17,7 @@ const App = () => {
   const [selectedCountry, setSelectedCountry] = useState('Worldwide');
   const countryData = useSelectedCountryDetails(selectedCountry);
   const timelineData = useSelectedCountryTimeline(selectedCountry);
+  const [mapCenter, mapZoom] = useMapDetails(countryData);
 
   return (
     <div className="app">
@@ -64,13 +67,15 @@ const App = () => {
         </div>
       </div>
 
-      <Card className="app__bottom">
-        <div className="app__bottom__left"></div>
-        <div className="app__bottom__right">
+      <div className="app__bottom">
+        <Card className="app__bottom__left">
+          <Map countries={countries} mapCenter={mapCenter} mapZoom={mapZoom} />
+        </Card>
+        <Card className="app__bottom__right">
           <h3>Active Cases By Country</h3>
           <Table countries={countries} />
-        </div>
-      </Card>
+        </Card>
+      </div>
     </div>
   );
 };

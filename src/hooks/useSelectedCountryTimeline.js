@@ -13,7 +13,6 @@ const useSelectedCountryTimeline = (selectedCountry) => {
       .then((res) => res.json())
       .then((data) => {
         setData(data);
-        console.log(data);
       })
       .catch((err) => setData([]));
   }, [selectedCountry]);
