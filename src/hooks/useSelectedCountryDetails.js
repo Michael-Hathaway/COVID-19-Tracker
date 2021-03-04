@@ -6,8 +6,8 @@ const useSelectedCountryDetails = (selectedCountry) => {
   const fetchCountryData = async (selectedCountry) => {
     const url =
       selectedCountry === 'Worldwide'
-        ? 'https://disease.sh/v3/covid-19/all'
-        : `https://disease.sh/v3/covid-19/countries/${selectedCountry}`;
+        ? '//disease.sh/v3/covid-19/all'
+        : `//disease.sh/v3/covid-19/countries/${selectedCountry}`;
 
     fetch(url)
       .then((res) => res.json())

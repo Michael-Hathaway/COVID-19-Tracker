@@ -7,9 +7,7 @@ const useSelectedCountryTimeline = (selectedCountry) => {
     const countryCode =
       selectedCountry === 'Worldwide' ? 'all' : selectedCountry;
 
-    fetch(
-      `http://disease.sh/v3/covid-19/historical/${countryCode}?lastdays=120`
-    )
+    fetch(`//disease.sh/v3/covid-19/historical/${countryCode}?lastdays=120`)
       .then((res) => res.json())
       .then((data) => {
         setData(data);
