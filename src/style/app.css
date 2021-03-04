@@ -23,7 +23,9 @@ body {
 }
 
 .app__stats__container {
-  flex: 0.3;
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-row-gap: 15px;
   min-width: 300px;
 }
 

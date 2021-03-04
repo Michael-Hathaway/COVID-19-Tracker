@@ -19,8 +19,8 @@ const Map = React.memo(({ countries, mapCenter, mapZoom }) => {
             lng: country.countryInfo.long,
           }}
           fillOpacity={0.4}
-          fillColor="red"
-          color="red"
+          fillColor="rgba(204, 16, 52, 0.5)"
+          color="#CC1034"
           radius={Math.sqrt(country.cases) * 250}
         >
           <MapPopup country={country} />

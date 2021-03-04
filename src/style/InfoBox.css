@@ -2,6 +2,10 @@
   padding: 5px 20px;
 }
 
+.infoBox__title {
+  font-size: 30px;
+}
+
 .infoBox__cases {
   color: #cc1034;
   font-size: 30px;

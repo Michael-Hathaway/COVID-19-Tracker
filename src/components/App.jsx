@@ -34,6 +34,7 @@ const App = () => {
               total={countryData.cases}
               cases={countryData.todayCases}
             />
+            <br />
             <CovidDataLineGraph
               country={selectedCountry}
               data={timelineData}
@@ -46,6 +47,7 @@ const App = () => {
               total={countryData.recovered}
               cases={countryData.todayRecovered}
             />
+            <br />
             <CovidDataLineGraph
               country={selectedCountry}
               data={timelineData}
@@ -58,6 +60,7 @@ const App = () => {
               total={countryData.deaths}
               cases={countryData.todayDeaths}
             />
+            <br />
             <CovidDataLineGraph
               country={selectedCountry}
               data={timelineData}
