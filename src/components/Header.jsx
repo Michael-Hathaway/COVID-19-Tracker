@@ -21,7 +21,7 @@ const Header = ({ countries, selectedCountry, setSelectedCountry }) => {
   return (
     <div className="header">
       <div className="header__title">
-        <h1>COVID-19 Tracker</h1>
+        <h1>COVID-19 Data Visualization</h1>
       </div>
       <FormControl className="header__dropdown">
         <Select
