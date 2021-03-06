@@ -1,7 +1,8 @@
 import React from 'react';
 import CovidCasesInfoBox from './CovidCasesInfoBox';
 import CovidDataLineGraph from './CovidDataLineGraph';
-import { Card } from '@material-ui/core';
+import Card from './Card';
+import '../style/app.css';
 
 const CovidStatsBar = ({ selectedCountry, countryData, timelineData }) => {
   return (
