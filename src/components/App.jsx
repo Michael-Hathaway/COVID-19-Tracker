@@ -4,11 +4,10 @@ import useSelectedCountryDetails from '../hooks/useSelectedCountryDetails';
 import useSelectedCountryTimeline from '../hooks/useSelectedCountryTimeline';
 import useMapDetails from '../hooks/useMapDetails';
 import Header from './Header';
+import CovidStatsBar from './CovidStatsBar';
 import Card from './Card';
-import CovidCasesInfoBox from './CovidCasesInfoBox';
 import Map from './Map';
 import Table from './Table';
-import CovidDataLineGraph from './CovidDataLineGraph';
 import 'leaflet/dist/leaflet.css';
 import '../style/app.css';
 
@@ -27,47 +26,11 @@ const App = () => {
           selectedCountry={selectedCountry}
           setSelectedCountry={setSelectedCountry}
         />
-        <div className="app__stats">
-          <Card className="app__stats__container">
-            <CovidCasesInfoBox
-              title="Coronavirus Cases"
-              total={countryData.cases}
-              cases={countryData.todayCases}
-            />
-            <br />
-            <CovidDataLineGraph
-              country={selectedCountry}
-              data={timelineData}
-              type="cases"
-            />
-          </Card>
-          <Card className="app__stats__container">
-            <CovidCasesInfoBox
-              title="Recovered"
-              total={countryData.recovered}
-              cases={countryData.todayRecovered}
-            />
-            <br />
-            <CovidDataLineGraph
-              country={selectedCountry}
-              data={timelineData}
-              type="recovered"
-            />
-          </Card>
-          <Card className="app__stats__container">
-            <CovidCasesInfoBox
-              title="Deaths"
-              total={countryData.deaths}
-              cases={countryData.todayDeaths}
-            />
-            <br />
-            <CovidDataLineGraph
-              country={selectedCountry}
-              data={timelineData}
-              type="deaths"
-            />
-          </Card>
-        </div>
+        <CovidStatsBar
+          selectedCountry={selectedCountry}
+          countryData={countryData}
+          timelineData={timelineData}
+        />
       </div>
 
       <div className="app__bottom">
