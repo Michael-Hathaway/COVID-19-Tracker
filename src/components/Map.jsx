@@ -3,7 +3,7 @@ import { MapContainer, TileLayer, Circle } from 'react-leaflet';
 import MapPopup from './MapPopup';
 import '../style/Map.css';
 
-const Map = React.memo(({ countries, mapCenter, mapZoom }) => {
+const Map = ({ countries, mapCenter, mapZoom }) => {
   const [map, setMap] = useState(null);
 
   useEffect(() => {
@@ -11,9 +11,10 @@ const Map = React.memo(({ countries, mapCenter, mapZoom }) => {
   }, [mapCenter, mapZoom, map]);
 
   const renderDataOnMap = () => {
-    return countries.map((country) => {
+    return countries.map((country, index) => {
       return (
         <Circle
+          key={index}
           center={{
             lat: country.countryInfo.lat,
             lng: country.countryInfo.long,
@@ -45,6 +46,6 @@ const Map = React.memo(({ countries, mapCenter, mapZoom }) => {
       </MapContainer>
     </div>
   );
-});
+};
 
-export default Map;
+export default React.memo(Map);

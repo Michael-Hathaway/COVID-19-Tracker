@@ -10,7 +10,7 @@ import {
 } from '@material-ui/core';
 import '../style/Table.css';
 
-const Table = React.memo(({ countries }) => {
+const Table = ({ countries }) => {
   const renderTableRows = () => {
     // sort countries by number of active cases
     // create copy, so we don't change dropdown order
@@ -35,6 +35,6 @@ const Table = React.memo(({ countries }) => {
       </MuiTable>
     </TableContainer>
   );
-});
+};
 
-export default Table;
+export default React.memo(Table);
